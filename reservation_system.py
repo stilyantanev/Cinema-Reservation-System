@@ -48,3 +48,5 @@ class ReservationSystem:
         seat = self.cursor.execute(get_seat_for_id_command)
 
         return seat.fetchall()
+
+
