@@ -21,22 +21,13 @@ class ReservationSystem:
 
             self.connection.commit()
 
-    def show_movies(self):
-        show_movies_query = """
-        SELECT Movies.name, Movies.rating
-        FROM Movies
-        ORDER BY Movies.rating DESC
-        """
-        self.cursor.execute(show_movies_query)
+    def show_all_movies(self):
+        show_all_movies_command = """
+            SELECT name, rating FROM Movies
+            ORDER BY rating DESC"""
+        self.cursor.execute(show_all_movies_command)
         all_movies = self.cursor.fetchall()
-        print("Movies --- Rating")
-        for i in range(len(all_movies)):
-            print("[{}] - {} {}".format( i + 1, all_movies[i][0], all_movies[i][1]))
-        # print(all_movies)
-        # for movie in all_movies:
-            # print(movie[0], movie[1])
-
-
+        return all_movies
 
     def show_movie_projections(self, movie_id, date=None):
         if date is None:
@@ -55,6 +46,7 @@ class ReservationSystem:
         #     FROM Movies JOIN Projections
         #     ON Movies.id = Projections.movie_id
         #     """
+
     def count_available_spots(self, proj_id):
         show_spots_command = """
             SELECT projection_id, COUNT(row) AS spots
