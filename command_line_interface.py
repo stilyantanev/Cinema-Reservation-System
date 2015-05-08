@@ -24,7 +24,7 @@ class CLI:
 
             command = input("command>")
 
-        @staticmethod
+    @staticmethod
     def command_parser(command):
         commands = command.split()
 
@@ -42,11 +42,11 @@ class CLI:
 
     @staticmethod
     def list_all_movies(database):
-        movies = database.show_movies()
+        movies = database.show_all_movies()
 
         print("Movies --- Rating")
-        for i in range(len(all_movies)):
-            print("[{}] - {} {}".format( i + 1, all_movies[i][0], all_movies[i][1]))
+        for i in range(len(movies)):
+            print("[{}] - {} {}".format(i + 1, movies[i][0], movies[i][1]))
 
     def list_movies_projections(database):
         movie_id = input("movie_id>")

@@ -1,4 +1,5 @@
 from reservation_system import ReservationSystem
+from command_line_interface import CLI
 
 
 def main():
@@ -7,6 +8,6 @@ def main():
     db.create_tables_from_file("tables.sql")
     # db.create_tables_from_file("example.sql")
 
-    db.show_movies()
+    CLI.list_all_movies(db)
 if __name__ == '__main__':
     main()
