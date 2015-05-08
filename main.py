@@ -8,6 +8,8 @@ def main():
     db.create_tables_from_file("tables.sql")
     # db.create_tables_from_file("example.sql")
 
-    CLI.list_all_movies(db)
+    CLI.print_commands()
+    CLI.command_input(db)
+
 if __name__ == '__main__':
     main()
