@@ -1,32 +1,24 @@
-PRAGMA foreign_keys = ON;
-
-DROP DATABASE IF EXISTS Cinema;
-CREATE DATABASE Cinema;
-
-DROP TABLE Movies IF EXISTS;
-CREATE TABLE Movies(
-    id INTEGER PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Movies(
+    id INT PRIMARY KEY,
     name TEXT,
     rating REAL
 );
 
-DROP TABLE Projections IF EXISTS;
-CREATE TABLE Projections(
-    id INTEGER PRIMARY KEY,
-    movie_id INTEGER,
+CREATE TABLE IF NOT EXISTS Projections(
+    id INT PRIMARY KEY,
+    movie_id INT,
     type TEXT,
-    date TEXT,
-    time TEXT,
+    date DATETIME,
+    time DATETIME,
     FOREIGN KEY (movie_id) REFERENCES Movies(id)
 );
 
-DROP TABLE Reservations IF EXISTS;
-CREATE TABLE Reservations(
-    id INTEGER PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Reservations(
+    id INT PRIMARY KEY,
     username TEXT,
     projection_id INT,
     row INT,
-    col INT
+    col INT,
     FOREIGN KEY (projection_id) REFERENCES Projections(id)
 );
 
@@ -83,6 +75,7 @@ VALUES ("Pesho", 1, 7, 7),
        ("Stilyan", 3, 3, 2),
        ("Maria", 3, 2, 2),
        ("Maria", 3, 8, 8),
+       ("Peio", 4, 5, 6),
        ("Slavi", 5, 1, 1),
        ("Kincho", 5, 2, 2),
        ("Kerka", 6, 3, 3),
@@ -93,10 +86,12 @@ VALUES ("Pesho", 1, 7, 7),
        ("Pesho", 8, 2, 2),
        ("Gosho", 9, 2, 2),
        ("Dimitur", 10, 1, 2),
-       ("Ivan", 10, 1, 2),
+       ("Ivan", 10, 8, 2),
        ("Ivan", 10, 2, 2),
        ("Ivan", 10, 3, 2),
        ("Ivan", 10, 2, 3),
        ("Rado", 10, 2, 5),
        ("Ivo", 10, 1, 3),
-       ("Anton", 10, 3, 1),
+       ("Anton", 10, 3, 1);
+
+PRAGMA foreign_keys = ON;
