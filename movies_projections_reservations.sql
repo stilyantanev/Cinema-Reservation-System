@@ -1,4 +1,4 @@
-INSERT INTO Movies(name, rating)
+INSERT OR IGNORE INTO Movies(name, rating)
 VALUES ("The Hunger Games: Catching Fire", 7.9),
        ("Wreck-It Ralph", 7.8),
        ("Her", 8.3),
@@ -10,7 +10,7 @@ VALUES ("The Hunger Games: Catching Fire", 7.9),
        ("Noble", 7.2),
        ("The Seven Five", 7.3);
 
-INSERT INTO Projections(movie_id, type, date, time)
+INSERT OR IGNORE INTO Projections(movie_id, type, date, time)
 VALUES (1, "3D", "2014-04-01", "15:30"),
        (1, "4DX", "2014-04-02", "12:10"),
        (1, "2D", "2014-04-03", "11:40"),
@@ -19,14 +19,16 @@ VALUES (1, "3D", "2014-04-01", "15:30"),
        (2, "4DX", "2014-04-03", "18:20"),
        (3, "3D", "2014-04-02", "08:30"),
        (3, "3D", "2014-04-03", "11:30"),
-       (4, "2D", "2014-04-02", "12:35"),
+       (4, "2D", "2014-04-10", "12:30"),
        (5, "4DX", "2014-04-08", "10:55"),
        (5, "2D", "2014-04-02", "11:60"),
        (6, "3D", "2014-04-06", "22:40"),
+       (6, "2D", "2014-04-06", "10:25"),
        (6, "3D", "2014-04-05", "21:40"),
        (7, "2D", "2014-04-03", "18:35"),
        (8, "3D", "2014-04-02", "19:40"),
        (9, "4DX", "2014-04-03", "20:20"),
+       (9, "2D", "2014-04-04", "21:50"),
        (10, "3D", "2014-04-02", "19:40"),
        (10, "2D", "2014-04-01", "11:30"),
        (10, "3D", "2014-04-05", "09:20"),
@@ -34,7 +36,8 @@ VALUES (1, "3D", "2014-04-01", "15:30"),
        (10, "4DX", "2014-04-07", "01:35"),
        (10, "2D", "2014-04-08", "15:10");
 
-INSERT INTO Reservations(username, projection_id, row, col)
+
+INSERT OR IGNORE INTO Reservations(username, projection_id, row, col)
 VALUES ("Pesho", 1, 7, 7),
        ("Marcho", 1, 3, 2),
        ("Slavi", 1, 2, 2),
@@ -67,7 +70,41 @@ VALUES ("Pesho", 1, 7, 7),
        ("Ivan", 10, 3, 2),
        ("Ivan", 10, 2, 3),
        ("Rado", 10, 2, 5),
-       ("Ivo", 10, 1, 3),
-       ("Anton", 10, 3, 1);
+       ("Ivo", 11, 1, 3),
+       ("Anton", 11, 3, 1),
+       ("Pesho", 11, 7, 7),
+       ("Marcho", 12, 3, 2),
+       ("Slavi", 12, 2, 2),
+       ("Kina", 12, 1, 2),
+       ("Georgi", 13, 1, 1  ),
+       ("Georgi", 13, 2, 8),
+       ("Dorotei", 13, 5, 1),
+       ("Drago", 14, 5, 2),
+       ("Aleks", 14, 5, 3),
+       ("Aleksei", 14, 5, 4),
+       ("Denica", 15, 5, 5),
+       ("Filip", 15, 6, 2),
+       ("Kostadin", 15, 1, 2),
+       ("Stilyan", 16, 3, 2),
+       ("Debora", 16, 2, 2),
+       ("Antonia", 17, 8, 8),
+       ("Ivona", 17, 5, 6),
+       ("Karcho", 18, 1, 1),
+       ("Kiro", 19, 2, 2),
+       ("Kerka", 19, 3, 3),
+       ("Misho", 20, 4, 4),
+       ("Dorotei", 20, 1, 1),
+       ("Doncho", 20, 9, 9),
+       ("Gerasim", 21, 10, 10),
+       ("Gero", 21, 2, 2),
+       ("Matei", 21, 2, 2),
+       ("Boqn", 22, 1, 2),
+       ("Kristina", 23, 8, 2),
+       ("Gancho", 24, 2, 2),
+       ("Gancho", 24, 3, 2),
+       ("Gancho", 24, 2, 3),
+       ("Radi", 24, 4, 4),
+       ("Simo", 24, 9, 9),
+       ("Dimo", 24, 4, 5);
 
-PRAGMA foreign_keys = ON;
+-- PRAGMA foreign_keys = ON;
