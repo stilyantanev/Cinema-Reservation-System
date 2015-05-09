@@ -124,8 +124,6 @@ class CommandIO:
         print("You will exit our system! Be carefull!")
         print()
 
-# 66666666666666666666666666
-
     @staticmethod
     def exit(database):
         database.close_connection()
