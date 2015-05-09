@@ -106,3 +106,5 @@ VALUES ("Pesho", 1, 7, 7),
        ("Radi", 24, 4, 4),
        ("Simo", 24, 9, 9),
        ("Dimo", 24, 4, 5);
+
+-- PRAGMA foreign_keys = ON;
