@@ -106,6 +106,8 @@ class CommandIO:
     @staticmethod
     def cancel_reservation(database, name):
         database.delete_reservation(name)
+        print("{} you reservation was deleted!".format(name))
+        print("Have a nice day!")
 
     @staticmethod
     def help():
@@ -221,7 +223,7 @@ class CommandIO:
 
     @staticmethod
     def print_movie_name(database, movie_id):
-        current_movie = database.get_movie_name(movie_id)[0]
+        current_movie = database.get_movie_name(movie_id)
         print("Movie: {}".format(current_movie))
 
     @staticmethod
